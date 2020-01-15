@@ -10,25 +10,11 @@ import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-//test
+// test
 @NgModule({
-   declarations: [
-      AppComponent,
-      NavComponent,
-      HomeComponent,
-      RegisterComponent
-   ],
-   imports: [
-      HttpClientModule,
-      BrowserModule,
-      AppRoutingModule,
-      FormsModule
-   ],
-   providers: [
-      AuthService
-   ],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [AppComponent, NavComponent, HomeComponent, RegisterComponent],
+  imports: [HttpClientModule, BrowserModule, AppRoutingModule, FormsModule],
+  providers: [AuthService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
