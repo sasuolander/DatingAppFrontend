@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
+import { UserAuth } from '../_model/userAuth';
 
 
 
@@ -16,7 +17,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(model: any) {
+  login(model: UserAuth) {
     return this.http.post(this.baseUrl + 'login', model).pipe(
       map((response: any) => {
         const user = response;

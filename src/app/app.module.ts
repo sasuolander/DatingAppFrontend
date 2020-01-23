@@ -1,3 +1,4 @@
+import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges';
 import { UserService } from './_services/user.service';
 import { AuthGuard } from './_guards/auth.guard';
 
@@ -22,17 +23,18 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { MemberListComponent } from './members/member-list/member-list.component';
-import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-import { MemberDetailResolver } from './_resolver/member.detail.resolver';
+import { MemberDetailResolver } from './_resolver/member-detail.resolver';
 import { AuthService } from './_services/auth.service';
 import { AlertifyService } from './_services/alertify.service';
-import { MemberListResolver } from './_resolver/member.list.resolver';
+import { MemberListResolver } from './_resolver/member-list.resolver';
 
 import { NgxGalleryModule } from 'ngx-gallery';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditlResolver } from './_resolver/member-edit.resolver';
 
 export function tokenFromStorage() {
   return localStorage.getItem('token');
@@ -53,9 +55,9 @@ export class CustomHammerConfig extends HammerGestureConfig {
     RegisterComponent,
     MemberListComponent,
     MemberCardComponent,
-    ListsComponent,
     MessagesComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberEditComponent,
   ],
   imports: [
     HttpClientModule,
@@ -79,7 +81,9 @@ export class CustomHammerConfig extends HammerGestureConfig {
     ErrorInterceptorProvider,
     MemberDetailResolver,
     MemberListResolver,
+    MemberEditlResolver,
     AuthService,
+    PreventUnsavedChanges,
     AlertifyService,
     AuthGuard,
     UserService,
