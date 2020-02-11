@@ -35,6 +35,8 @@ import { MemberListResolver } from './_resolver/member-list.resolver';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditlResolver } from './_resolver/member-edit.resolver';
+import { PhotoEditComponent } from './members/photo-edit/photo-edit.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 export function tokenFromStorage() {
   return localStorage.getItem('token');
@@ -58,6 +60,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     MessagesComponent,
     MemberDetailComponent,
     MemberEditComponent,
+    PhotoEditComponent,
   ],
   imports: [
     HttpClientModule,
@@ -65,6 +68,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    FileUploadModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     NgxGalleryModule,
